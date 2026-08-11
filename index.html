@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ritu ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    color:white;
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    transition:transform .7s cubic-bezier(.77,0,.18,1);
+}
+
+.slide{
+    min-width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+/* ================= 9 DIFFERENT COLOURS ================= */
+
+.slide1{
+    background:linear-gradient(135deg,#5a003f,#e90073,#ff3ca6);
+}
+
+.slide2{
+    background:linear-gradient(135deg,#003b75,#0087d9,#65d9ff);
+}
+
+.slide3{
+    background:linear-gradient(135deg,#31005c,#7417b8,#d448e8);
+}
+
+.slide4{
+    background:linear-gradient(135deg,#3b0225,#ae7f19,#3b0225);
+}
+
+.slide5{
+    background:linear-gradient(135deg,#000d2b,#1994af,#5db3ca);
+}
+
+.slide6{
+    background:linear-gradient(135deg,#c44500,#ff7a00,#ffb347);
+}
+
+.slide7{
+    background:linear-gradient(135deg,#72004d,#d41470,#ff65a8);
+}
+
+.slide8{
+    background:linear-gradient(135deg,#d99400,#ffd447,#ffe88a);
+    color:#4b2500;
+}
+
+.slide9{
+    background:linear-gradient(135deg,#21003c,#85005f,#ff2f9d);
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    width:100%;
+    max-width:600px;
+    position:relative;
+    z-index:5;
+}
+
+h1{
+    font-family:"Great Vibes",cursive;
+    font-weight:400;
+    letter-spacing:2px;
+    text-shadow:
+        0 3px 5px #0005,
+        0 0 15px #ffffff55;
+
+}
+
+h2{
+    font-size:36px;
+    margin-bottom:18px;
+    font-family:cursive;
+}
+
+p{
+    font-size:19px;
+    line-height:1.5;
+    text-shadow:0 2px 6px #0005;
+}
+
+/* ================= GIFT ================= */
+
+.gift{
+    font-size:130px;
+    cursor:pointer;
+    display:inline-block;
+    animation:gift 1.4s infinite;
+    filter:drop-shadow(0 10px 20px #0007);
+}
+
+.touch{
+    margin-top:20px;
+    padding:13px 25px;
+    border:2px dashed white;
+    border-radius:30px;
+    display:inline-block;
+    animation:pulse 1.3s infinite;
+}
+
+/* ================= PHOTO ================= */
+
+.photo-frame{
+    width:290px;
+    height:370px;
+    margin:15px auto 20px;
+    padding:9px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 12px 30px #0008;
+    transform:rotate(-2deg);
+    animation:photoIn .8s ease;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    background:#ffffffdd;
+    color:#35133b;
+    padding:22px;
+    border-radius:15px;
+    text-align:left;
+    box-shadow:0 12px 30px #0004;
+}
+
+.message p{
+    color:#35133b;
+    text-shadow:none;
+    margin:12px 0;
+    font-size:17px;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-top:18px;
+}
+
+button{
+    border:2px solid white;
+    background:#ffffff22;
+    color:white;
+    padding:11px 22px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    backdrop-filter:blur(5px);
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:white;
+    color:#e90073;
+}
+
+.slide8 button{
+    color:#4b2500;
+    border-color:#4b2500;
+}
+
+/* ================= STICKERS ================= */
+
+.sticker{
+    position:absolute;
+    z-index:2;
+    font-size:40px;
+    pointer-events:none;
+}
+
+.a{
+    top:7%;
+    left:7%;
+    animation:float 3s infinite;
+}
+
+.b{
+    top:12%;
+    right:7%;
+    animation:spin 5s linear infinite;
+}
+
+.c{
+    bottom:12%;
+    left:7%;
+    animation:float 4s infinite;
+}
+
+.d{
+    bottom:15%;
+    right:8%;
+    animation:float 3.5s infinite;
+}
+
+/* ================= DOTS ================= */
+
+.dots{
+    position:fixed;
+    z-index:50;
+    bottom:13px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#ffffff77;
+}
+
+.dot.active{
+    background:white;
+    transform:scale(1.5);
+}
+
+/* ================= CAKE ================= */
+
+.cake{
+    font-size:100px;
+    animation:cake 1.2s infinite;
+}
+
+/* ================= HEARTS ================= */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+    z-index:100;
+    pointer-events:none;
+    animation:heart 4s linear forwards;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:8px;
+    height:15px;
+    z-index:100;
+    animation:confetti 3s linear forwards;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes gift{
+    0%,100%{
+        transform:rotate(0) scale(1);
+    }
+    50%{
+        transform:rotate(7deg) scale(1.1);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.06);
+        opacity:.7;
+    }
+}
+
+@keyframes photoIn{
+    from{
+        opacity:0;
+        transform:scale(.7) rotate(-8deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(-2deg);
+    }
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-18px) rotate(8deg);
+    }
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes cake{
+    50%{
+        transform:translateY(-12px) scale(1.08);
+    }
+}
+
+@keyframes heart{
+    from{
+        bottom:-40px;
+        opacity:1;
+    }
+    to{
+        bottom:110%;
+        opacity:0;
+        transform:translateX(100px) rotate(25deg);
+    }
+}
+
+@keyframes confetti{
+    to{
+        top:110%;
+        transform:rotate(720deg);
+    }
+}
+
+@media(max-height:700px){
+    .photo-frame{
+        width:230px;
+        height:280px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider" id="slider">
+
+<!-- ================================================= -->
+<!-- SLIDE 1 -->
+<!-- ================================================= -->
+
+<section class="slide slide1">
+
+<span class="sticker a">💖</span>
+<span class="sticker b">👑</span>
+<span class="sticker c">✨</span>
+<span class="sticker d">💕</span>
+
+<div class="content">
+
+<div class="gift" onclick="next()">🎁</div>
+
+<h1>For Ritu ♡</h1>
+
+<p>
+Something Special<br>
+For You 💛
+</p>
+
+<div class="touch">
+👆 Touch the Gift
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 2 -->
+<!-- ================================================= -->
+
+<section class="slide slide2">
+
+<span class="sticker a">🎈</span>
+<span class="sticker b">❤️</span>
+<span class="sticker c">✨</span>
+<span class="sticker d">💗</span>
+
+<div class="content">
+
+<div style="font-size:90px">
+💌
+</div>
+
+<h2>Hello My Dear Sister 💕</h2>
+
+<p>
+Aaj ka din bahut special hai...<br>
+kyunki aaj tumhara<br>
+<b>Birthday hai! 🎂</b>
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 3 -->
+<!-- ================================================= -->
+
+<section class="slide slide3">
+
+<span class="sticker a">💗</span>
+<span class="sticker b">⭐</span>
+<span class="sticker c">🌸</span>
+<span class="sticker d">💖</span>
+
+<div class="content">
+
+<h2>Beautiful You 💕</h2>
+
+<div class="photo-frame">
+<img src="images/image4.jpeg">
+</div>
+
+<p>
+Tumhari smile sabse khoobsurat hai. ❤️
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 4 -->
+<!-- ================================================= -->
+
+<section class="slide slide4">
+
+<span class="sticker a">🌸</span>
+<span class="sticker b">🦋</span>
+<span class="sticker c">💖</span>
+<span class="sticker d">✨</span>
+
+<div class="content">
+
+<h2>Special Moment 🌸</h2>
+
+<div class="photo-frame">
+<img src="images/image.jpeg">
+</div>
+
+<p>
+💕 Life is more beautiful with you in it. Thank you for all the wonderful memories and every little moment we’ve shared. Wishing you endless happiness and success! 🎉🎂
+✨
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 5 -->
+<!-- ================================================= -->
+
+<section class="slide slide5">
+
+<span class="sticker a">👑</span>
+<span class="sticker b">💙</span>
+<span class="sticker c">💎</span>
+<span class="sticker d">✨</span>
+
+<div class="content">
+
+<h2>Looking Amazing 💙</h2>
+
+<div class="photo-frame">
+<img src="images/image3.jpeg">
+</div>
+
+<p>
+ Always stay happy, blessed, and smiling. Love you always! 🎂✨
+ ✨
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 6 -->
+<!-- ================================================= -->
+
+<section class="slide slide6">
+
+<span class="sticker a">🌸</span>
+<span class="sticker b">💗</span>
+<span class="sticker c">🎈</span>
+<span class="sticker d">❤️</span>
+
+<div class="content">
+
+<h2>Another Memory 🌸</h2>
+
+<div class="photo-frame">
+<img src="images/image2.jpeg">
+</div>
+
+<p>
+Happy Birthday, dear sister! 💕 You are not just my sister, but a beautiful part of my life. Every moment spent with you is unforgettable, and I’m grateful for the special bond we share. May all your dreams come true! 🥳🎂
+❤️
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 7 -->
+<!-- ================================================= -->
+
+<section class="slide slide7">
+
+<span class="sticker a">🧸</span>
+<span class="sticker b">💕</span>
+<span class="sticker c">🌸</span>
+<span class="sticker d">💖</span>
+
+<div class="content">
+
+<h2>Special Bond ♡</h2>
+
+<div class="photo-frame">
+<img src="images/image6.jpeg">
+</div>
+
+<p>
+Happy Birthday, sis! 🎂💖 Some bonds are too special to be explained in words, and ours is one of them. Every moment with you is a memory I will always cherish. May your life be filled with endless happiness, love, and beautiful moments! 🌸✨
+ ❤️
+</p>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="next()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 8 WISH -->
+<!-- ================================================= -->
+
+<section class="slide slide8">
+
+<span class="sticker a">💖</span>
+<span class="sticker b">🌸</span>
+<span class="sticker c">✨</span>
+<span class="sticker d">💕</span>
+
+<div class="content">
+
+<h2>My Wish For You 💗</h2>
+
+<div class="message">
+
+<p>💗 May God fulfill all your wishes and bless youu with endless happiness. ✨</p>
+
+<p>💗 may your life alwaysbe filed with happiness,Love,and success.</p>
+
+<p>💗 May you live for 10000000000 years.</p>
+
+<p>💗 May you achieve all your dreams and make every wissh off you heart come true <div class=""></div> ✨</p>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="prev()">← Back</button>
+
+<button onclick="finale()">Next →</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 9 FINAL -->
+<!-- ================================================= -->
+
+<section class="slide slide9">
+
+<span class="sticker a">🎈</span>
+<span class="sticker b">🎈</span>
+<span class="sticker c">🎁</span>
+<span class="sticker d">🧸</span>
+
+<div class="content">
+
+<div class="cake">🎂</div>
+
+<h1>Happy Birthday my Amazing sister
+
+</h1>
+
+<h1 style="font-size:58px">
+Ritu ❤️
+</h1>
+
+<p>
+Happy Birthday to my wonderful sister! ❤️ 
+We share such a special bond that is truly irreplaceable.
+ Every moment I’ve spent with you has become a beautiful memory that I will always cherish. 
+ Thank you for being such an important part of my life.
+  May you always be happy, blessed, and surrounded by love and laughter.
+   No matter where life takes us, 
+our bond will always remain special. Love you always! 🎂💕✨✨
+</p>
+
+<div style="font-size:45px;margin:20px">
+🎈 💖 🎉 🌸 👑
+</div>
+
+<p>
+<b>You are truly special! 💕</b>
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- DOTS -->
+
+<div class="dots" id="dots"></div>
+
+
+<script>
+
+let current=0;
+
+const total=9;
+
+const slider=
+document.getElementById("slider");
+
+const dots=
+document.getElementById("dots");
+
+
+/* DOTS */
+
+for(let i=0;i<total;i++){
+
+    const dot=document.createElement("div");
+
+    dot.className="dot";
+
+    if(i===0){
+        dot.classList.add("active");
+    }
+
+    dot.onclick=()=>goTo(i);
+
+    dots.appendChild(dot);
+}
+
+
+/* GO TO */
+
+function goTo(index){
+
+    current=index;
+
+    slider.style.transform=
+    `translateX(-${current*100}vw)`;
+
+    document.querySelectorAll(".dot")
+    .forEach((dot,i)=>{
+
+        dot.classList.toggle(
+            "active",
+            i===current
+        );
+
+    });
+
+    createHearts();
+}
+
+
+/* NEXT */
+
+function next(){
+
+    if(current<total-1){
+
+        goTo(current+1);
+
+    }
+
+}
+
+
+/* PREVIOUS */
+
+function prev(){
+
+    if(current>0){
+
+        goTo(current-1);
+
+    }
+
+}
+
+
+/* HEARTS */
+
+function createHearts(){
+
+    for(let i=0;i<8;i++){
+
+        let heart=
+        document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML=
+        ["💖","💕","💗","✨","🌸"]
+        [Math.floor(Math.random()*5)];
+
+        heart.style.left=
+        Math.random()*100+"vw";
+
+        heart.style.fontSize=
+        (18+Math.random()*25)+"px";
+
+        heart.style.animationDuration=
+        (3+Math.random()*3)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },6000);
+    }
+
+}
+
+
+/* CONFETTI */
+
+function confetti(){
+
+    for(let i=0;i<100;i++){
+
+        let c=
+        document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left=
+        Math.random()*100+"vw";
+
+        c.style.background=
+        ["#ff4fa3",
+         "#ffd166",
+         "#7cf7ff",
+         "#ffffff",
+         "#b88cff"]
+        [Math.floor(Math.random()*5)];
+
+        c.style.animationDelay=
+        Math.random()*1.5+"s";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },4500);
+
+    }
+
+}
+
+
+/* FINAL */
+
+function finale(){
+
+    next();
+
+    setTimeout(()=>{
+
+        confetti();
+
+        for(let i=0;i<4;i++){
+
+            setTimeout(
+                createHearts,
+                i*300
+            );
+
+        }
+
+    },400);
+
+}
+
+
+/* SWIPE */
+
+let startX=0;
+
+document.addEventListener(
+"touchstart",
+e=>{
+    startX=e.touches[0].clientX;
+});
+
+
+document.addEventListener(
+"touchend",
+e=>{
+
+    let endX=
+    e.changedTouches[0].clientX;
+
+    if(startX-endX>60){
+        next();
+    }
+
+    if(endX-startX>60){
+        prev();
+    }
+
+});
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+"keydown",
+e=>{
+
+    if(e.key==="ArrowRight"){
+        next();
+    }
+
+    if(e.key==="ArrowLeft"){
+        prev();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
